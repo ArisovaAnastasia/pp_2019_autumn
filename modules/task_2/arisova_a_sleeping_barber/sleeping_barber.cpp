@@ -34,7 +34,7 @@ int Barber(int size_queue, int size) {
         // add customer in reception
         while (flag) {
             MPI_Recv(&cust_rank, 1, MPI_INT, MPI_ANY_SOURCE, 0, MPI_COMM_WORLD, &status);
-            if ((reception.size() != size_queue)) {
+            if ((static_cast<int>(reception.size()) != size_queue)) {
                 reception.push(cust_rank);
                 buff = empty_seat;
                 MPI_Send(&buff, 1, MPI_INT, cust_rank, 0, MPI_COMM_WORLD);
