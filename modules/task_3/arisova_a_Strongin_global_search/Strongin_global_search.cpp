@@ -47,7 +47,7 @@ double Algorithm(double a, double b, double(*Q)(double)) {
         for (int i = 0; i < k - 1; i++) {
             deltaQi = Qx[i + 1] - Qx[i];
             deltaxi = x[i + 1] - x[i];
-            temp = fabs(deltaQi)/ deltaxi;
+            temp = std::abs(deltaQi)/ deltaxi;
             if (temp > lk) {
                 lk = temp;
             }
