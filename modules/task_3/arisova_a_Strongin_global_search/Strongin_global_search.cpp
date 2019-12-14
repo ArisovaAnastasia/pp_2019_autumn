@@ -110,7 +110,7 @@ double goParallelAlgorithm(double a, double b, double(*Q)(double)) {
 
     std::vector<double>gl_vec;
 
-    double h = fabs(b - a) / (static_cast<double> (size));
+    double h = std::abs(b - a) / (static_cast<double> (size));
     gl_vec.push_back(a);
     for (int i = 1; i < size; i++) {
         gl_vec.push_back(a + i * h);
