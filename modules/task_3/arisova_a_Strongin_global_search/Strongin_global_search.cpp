@@ -12,8 +12,7 @@ double Algorithm(double a, double b, double(*Q)(double)) {
     double Rt, Ri;  // Перемененные для подсчета характеристики
     std::vector<double> x;   // вектор значений xk
     std::vector<double> Qx;   // вектор значений Q(xk)
-    auto iter1 = x.cbegin();
-    auto iter2 = Qx.cbegin();
+
 
       // Шаг 1.
       // Задаем х1 = а Q1 = Q(х1) х2 = b Q2 = Q(х2)
@@ -91,7 +90,7 @@ double Algorithm(double a, double b, double(*Q)(double)) {
             auto iter2 = Qx.cbegin();
             x.emplace(iter1 + ind, xt);
             Qx.emplace(iter2 + ind, Q(xt));
-              // Положитьт Q*_k+1 = ... x*_k+1
+              // Положить Q*_k+1 = ... x*_k+1
             if (Qx[ind] < QQ) {
                 QQ = Qx[ind];
                 xx = x[ind];
