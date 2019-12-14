@@ -47,7 +47,7 @@ double Algorithm(double a, double b, double(*Q)(double)) {
         for (int i = 0; i < k - 1; i++) {
             deltaQi = Qx[i + 1] - Qx[i];
             deltaxi = x[i + 1] - x[i];
-            temp = std::fabs(deltaQi)/ deltaxi;
+            temp = std::abs(deltaQi)/ deltaxi;
             if (temp > lk) {
                 lk = temp;
             }
@@ -110,7 +110,7 @@ double goParallelAlgorithm(double a, double b, double(*Q)(double)) {
 
     std::vector<double>gl_vec;
 
-    double h = std::fabs(b - a) / (static_cast<double> (size));
+    double h = std::abs(b - a) / (static_cast<double> (size));
     gl_vec.push_back(a);
     for (int i = 1; i < size; i++) {
         gl_vec.push_back(a + i * h);
