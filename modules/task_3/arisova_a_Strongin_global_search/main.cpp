@@ -1,7 +1,7 @@
   // Copyright 2019 Arisova Anastasiia
 #include <gtest-mpi-listener.hpp>
 #include <gtest/gtest.h>
-#include <queue>
+#include <cmath>
 #include "./Strongin_global_search.h"
 
 #define PI 3.14159265
@@ -10,7 +10,7 @@ double Q1(double x) {
     return ((x + 1) * (x + 1) - 2);
 }
 double Q2(double x) {
-    return (sin(x));
+    return (std::sin(x));
 }
 double Q3(double x) {
     return (- (x + 1) * (x + 1) - 3);
@@ -37,7 +37,7 @@ TEST(Task_Strongin_global_search, Test_3) {
     double ans;
     MPI_Comm_size(MPI_COMM_WORLD, &size);
     ans = goParallelAlgorithm(PI / 4, 3 * PI / 4, Q2);
-    EXPECT_NEAR(ans, 1 / (sqrt(2)), 1.2e-4);
+    EXPECT_NEAR(ans, 1 / (std::sqrt(2)), 1.2e-4);
 }
 
 TEST(Task_Strongin_global_search, Test_4) {
