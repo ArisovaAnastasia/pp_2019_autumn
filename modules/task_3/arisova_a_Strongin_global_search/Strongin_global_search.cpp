@@ -4,6 +4,7 @@
 #include <ctime>
 #include <algorithm>
 #include <iostream>
+#include <cmath>
 #include "../../../modules/task_3/arisova_a_Strongin_global_search/Strongin_global_search.h"
 
 #define eps 1.2e-02
